@@ -1,0 +1,66 @@
+========== pull request & merge ==========
+
+
+# リモートリポはチームで共有するリポジトリのため、自由にマージできない
+
+
+# マージするためにはpull requestというリクエストを出す
+
+
+# 原則、他のメンバーが自分の出したpull requestを確認してマージ
+
+
+
+========== pull request (mergeの依頼）==========
+
+
+# Github上でpull requestを作成
+
+
+　1. GitHubのリモートリポジトリのページを開く
+
+
+　2. 「Pull requests」をクリック
+
+
+　3. 「New Pull request」をクリック
+
+
+　4. どのブランチ（compare)からどのブランチ(base)へpull requestを出すかを選ぶ
+
+
+　5. 画面下に差分が表示されるので、確認
+
+
+　6. 「Create pull request」をクリックして、作成画面に移動
+
+
+　7. タイトルとコメントを記載する。
+
+
+　8. 「Create pull request」をクリックして作成
+
+
+
+========== merge ==========
+
+
+# merge実行
+
+
+　1. GitHubのリモートリポジトリのページを開く
+
+
+　2. 「Pull requests」をクリック
+
+
+　3. 「Files changed」をクリックして差分を確認
+
+
+　4. 「Conversation」をクリック
+
+
+　5. 「Merge pull request」をクリックして、コメントを書き込む
+
+
+　6. 「Confirm merge」をクリックしてmergeを実行
