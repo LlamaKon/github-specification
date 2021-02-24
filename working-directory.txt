@@ -1,0 +1,39 @@
+========== Working directory ==========
+
+
+# Gitのファイル管理は３つの状態に分割される
+
+
+　・Working directory
+
+
+　・Staging area
+
+
+　・リポジトリ
+
+
+# ３つの状態の関係性
+
+
+　Working directory　　⇄　　Staging area　　⇄　　リポジトリ
+
+
+
+========== 破棄 ==========
+
+
+# Working directoryの内容を破棄する (Staging areaの内容を上書きしている)
+
+
+　$ git checkout -- <file-name>
+
+
+　　・$ git statusでこのコマンドを確認できる
+
+
+　　・Gitでtrack状態のファイルのみ可能
+
+
+　　・破棄した内容はGitでは修復できない
+
