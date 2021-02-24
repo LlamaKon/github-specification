@@ -1,17 +1,22 @@
 ========== 基本 ==========
 
+
 # Gitはファイル変更を３つのステージに分割して管理
+
 
 　・Working directory
 　
+
 　・Staging area
+
 
 　・リポジトリ
 
 
 # Gitの作業状態を確認
 
-$ git status
+
+　$ git status
 
 
 
@@ -20,9 +25,12 @@ $ git status
 
 1. ファイルの内容を変更　（Working directory)
 
+
 2. addで作業内容をStaging areaへ追加　(Working directory → Staging area)
 
+
 3. commitで作業内容をリポジトリへ追加 (Staging area → リポジトリ）
+
 
 4. pull & push
 
@@ -35,12 +43,13 @@ $ git status
 
 # 特定のファイルの作業内容をStaging areaに追加
 
-$ git add <filename>
+
+　$ git add <filename>
 
 
 # カレントディレクトリ配下の全てのファイル・フォルダをStaging areaに追加
 
-$ git add .
+　$ git add .
 
 
 
@@ -51,14 +60,18 @@ $ git add .
 
 # Staging areaの内容をコミット
 
-$ git commit -m "<commit message>"
+
+　$ git commit -m "<commit message>"
 
 
 # コミットメッセージの注意点
 
+
 　・必ずコミットメッセージを付ける
 
+
 　・基本的には一文で変更内容が分かるように記載
+
 
 　・コミット後に現在いるブランチにコミットポイントが作られる
 
@@ -66,8 +79,11 @@ $ git commit -m "<commit message>"
 
 ========== コミット履歴を見る ==========
 
+
 $ git log
 
+
 　・上に出力される履歴が新しい履歴
+
 
 　・commit ID, Author, Date, commit messageが出力
