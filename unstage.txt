@@ -1,0 +1,34 @@
+========== unstage ==========
+
+
+# Staging areaの内容をWorking directoryに戻す
+
+
+$ git reset HEAD <file-name>
+
+
+　・$ git statusでこのコマンドを確認できる
+
+
+　・HEADは今いるブランチのへのポインタを指す
+
+
+　・HEADは省略可
+
+
+
+========== 例　==========
+
+
+# Staging areaに反映する　（Working directory　→ Staging area）
+
+
+　$ git add <file-name>
+
+
+# addを実行したが、今の処理を取り消したい （Staging area　→ Working directory)
+
+
+　$ git reset HEAD <file-name>
+
+
