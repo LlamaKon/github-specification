@@ -1,0 +1,71 @@
+========== ファイル名変更 (Git) ==========
+
+
+$ git mv <filename1> <filename2>
+
+
+　・<filename1>を<filename2>に変更し、Gitで管理
+
+
+　・$ git mvの場合、変更した際そのままStaging areaで管理される
+
+
+
+$ git mv <filename1> <filename2>　　　（→ Staging area)
+
+↓
+
+$ git commit -m "<commit message>"
+
+↓ 
+
+$ git pull origin main
+
+↓
+
+$ git push origin main
+
+
+
+========== ファイル名変更 (OS) ==========
+
+
+$ mv <filename1> <filename2>
+
+
+　・<filename1>を<filename2>に変更
+
+
+　・$ mvの場合、untrackファイルとして変更内容がWorking directoryで管理
+
+
+　・$ mvの場合、<filename1>の部分は削除したファイルとしてWorking directoryに管理される
+
+
+
+$ git add -A
+
+
+　・変更内容をStaging areaに追加する
+
+　
+
+$ mv <filename1> <filename2>　　　（→ Working directory)
+
+↓
+
+$ git add -A   (→ Staging area)
+
+　・renamed処理として扱われる
+
+↓
+
+$ git commit -m "<commit message>"
+
+↓
+
+$ git pull origin main
+
+↓
+
+$ git push origin main
