@@ -11,19 +11,22 @@ $ git mv <filename1> <filename2>
 
 
 
-$ git mv <filename1> <filename2>　　　（→ Staging area)
+# Git管理下でファイル名を変更
 
-↓
 
-$ git commit -m "<commit message>"
+　$ git mv <filename1> <filename2>　　　（→ Staging area)
 
-↓ 
+　↓
 
-$ git pull origin main
+　$ git commit -m "<commit message>"
 
-↓
+　↓ 
 
-$ git push origin main
+　$ git pull origin main
+
+　↓
+
+　$ git push origin main
 
 
 
@@ -50,22 +53,161 @@ $ git add -A
 
 　
 
-$ mv <filename1> <filename2>　　　（→ Working directory)
+# OS下でファイル名を変更
 
-↓
 
-$ git add -A   (→ Staging area)
+　$ mv <filename1> <filename2>　　　（→ Working directory)
 
-　・renamed処理として扱われる
+　↓
 
-↓
+　$ git add -A   (→ Staging area)
 
-$ git commit -m "<commit message>"
+　　・renamed処理として扱われる
 
-↓
+　↓
 
-$ git pull origin main
+　$ git commit -m "<commit message>"
 
-↓
+　↓
 
-$ git push origin main
+　$ git pull origin main
+
+　↓
+
+　$ git push origin main
+
+
+
+========== ファイル削除 (Git) ==========
+
+
+$ git rm <filename>　(Git)
+
+
+　・<filename>を削除し、Gitで管理
+
+
+　・trackされないファイルは削除できない
+
+
+　・Staging areaに作業内容があるファイルは削除できない
+
+
+$ rm <filename>　(OS)
+
+
+　・$ git add -Aでファイルの削除をStaging areaに追加
+
+
+
+# trackされていないファイルを削除する場合
+
+
+　$ touch <filename>
+
+　↓
+
+　$ git rm <filename>　（削除できない）　→  trackされていない
+
+　↓
+
+　$ rm <filename>　（削除可能）　→  trackされていないファイルはOS下のコマンドで削除
+
+
+
+# Staging area内でファイルを削除する場合
+
+
+　$ touch <filename>
+
+　↓
+
+　$ git add <filename>　（ファイルをStaging areaに追加）
+
+　↓
+
+　$ git rm <filename>　（削除できない）　→  Staging areaに作業内容がある
+
+　↓
+
+　$ rm <filename>　（削除可能）　→  Staging areaにあるファイルはOS下のコマンドで削除
+
+　　・この時、Working directoryに<filename>を削除した作業内容が管理される
+
+　↓
+
+　$ git add <filename>　→ 削除した作業内容をStaging areaに追加することでGitの管理からも削除
+
+
+
+# コミットしてから削除する場合
+
+
+　$ touch <filename>
+
+　↓
+
+　$ git add <filename>　（ファイルをStaging areaに追加）
+
+　↓
+
+　$ git commit -m "<commit message>"　（ファイルをリポジトリに追加）
+
+　↓
+
+　$ git rm <filename> → （削除可能）
+
+　　・この時、Staging areaに<filename>を削除した作業内容が管理される
+
+　↓
+
+　$ git commit -m "<commit message>"　→ 削除した作業内容をコミットしてリポジトリに追加することでGitの管理からも削除
+
+
+
+========== ファイル削除を取り消す ==========
+
+
+$ git reset HEAD <filename>
+
+
+　・作業内容をunstage
+
+
+$ git checkout -- <filename>
+
+
+　・作業内容をWorking directoryから破棄
+
+
+
+# 作業内容を取り消す場合
+
+
+　$ touch <filename>
+
+　↓
+
+　$ git add <filename>　（ファイルをStaging areaに追加）
+
+　↓
+
+　$ git commit -m "<commit message>"  （ファイルをリポジトリに追加）
+
+　↓
+
+　$ git rm <filename>  (ファイル削除)
+
+　↓
+
+　$ git reset HEAD <filename>　（unstage)
+
+　　・この時、Working directoryに<filename>を削除した作業内容が管理される
+
+　　・ここではunstageした作業内容は反映されない
+
+　↓
+
+　$ git checkout -- <filename>　（削除した作業内容をWorking directoryから破棄）
+
+　　・ここで初めて削除を取り消した内容が反映される
