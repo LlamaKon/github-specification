@@ -67,19 +67,59 @@
 
 
 
- ========== merge（ローカルリポジトリ） ==========
+========== merge（ローカルリポジトリ） ==========
 
 
- # 指定したブランチを今いるブランチにマージ
+・Fast forword　：　mainブランチに新たなコミットが無い状態でのmerge
 
 
- 　$ git merge <branchname>
+・Automatic maege　：　mainブランチにも新たなコミットがある状態でのmerge
 
 
- # ブランチ同士の差分を確認　（diff)
+・Conflict　：　Automatic mergeを行う際、mainと同じ箇所を変更している場合に起きる現象
 
 
-   $ git diff <branchname1> <branchname2>
+# 指定したブランチを今いるブランチにマージ
 
 
-   　(<branchname1> : base, <branchname2> : compare)
+　$ git merge <branchname>
+
+
+# ブランチ同士の差分を確認　（diff)
+
+
+  $ git diff <branchname1> <branchname2>
+
+
+  　(<branchname1> : base, <branchname2> : compare)
+
+
+
+# Fast forward
+
+
+　$ git checkout -b <branchname>　（ブランチを作成し、そのブランチに移動）
+
+  ↓
+
+  --- ファイルの編集を行う ---
+
+　　$ git add <filename>
+
+　　$ git commit -m "<commit message>"
+
+  ↓
+
+  $ git checkout main　（mainブランチに移動）
+
+  ↓
+
+  $ git diff <branchname1> <branchname2>　（差分を確認)
+
+  ↓
+
+  $ git merge <branchname2>　（<branchname2>をmainブランチにmerge）
+
+  ↓
+
+  $ git branch -d <branchname2>　（不要になったブランチを削除）
