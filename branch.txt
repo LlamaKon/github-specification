@@ -3,14 +3,17 @@
 
 #ブランチの一覧を表示（現在の作業ブランチを確認）
 
+
 $ git branch
 
 
 ※ git branch を実行した際に、ページが切り替わる場合...
 
-$ git config --global --replace-all core.pager "less -F -X"
 
-(上記のコードを実行することでpagerが表示されるのを防ぐ)
+　$ git config --global --replace-all core.pager "less -F -X"
+
+
+　(上記のコードを実行することでpagerが表示されるのを防ぐ)
 
 
 
@@ -29,16 +32,44 @@ $ git config --global --replace-all core.pager "less -F -X"
 $ git branch <branch-name>
 
 
-・作業用ブランチ
+　・作業用ブランチ
 
 
-・メインブランチとは別のブランチを別途作成する
+　・メインブランチとは別のブランチを別途作成する
 
 
-・別途作成したブランチの内容はメインブランチには影響がない
+　・別途作成したブランチの内容はメインブランチには影響がない
 
 
-・機能ごとにブランチを作成することが多い
+　・機能ごとにブランチを作成することが多い
+
+
+〜　作成時の注意点　〜
+
+　
+　・何の作業を行うのかがすぐ分かる名前で作成
+
+
+　・ハイフンで区切る
+
+
+　・名前を長過ぎないようにする
+
+
+
+========== ブランチの一覧表示 ==========
+
+
+$ git branch
+
+
+　・ローカルリポのブランチの一覧を表示
+
+
+　・-aでリモートリポを含むローカルリポにある全てのブランチを表示
+
+
+　　→ ローカルリポに情報がないブランチは表示されない
 
 
 
@@ -48,11 +79,9 @@ $ git branch <branch-name>
 $ git checkout <branch-name>
 
 
-#ブランチの作成&切り替え
-
 $ git checkout -b <branch-name>
 
-(-bを付けることで新しいブランチを作成すると同時に作成したブランチに移動する)
+　　(-bを付けることで新しいブランチを作成すると同時に作成したブランチに移動する)
 
 
 
@@ -60,6 +89,7 @@ $ git checkout -b <branch-name>
 
 
 # 特定のブランチを削除
+
 
 $ git branch -d <branch-name>
 
@@ -69,7 +99,8 @@ $ git branch -d <branch-name>
 
 # 強制削除する場合...
 
-$ git branch -D <branch-name>
+　
+　$ git branch -D <branch-name>
 
 
 
@@ -86,4 +117,12 @@ $ git branch -D <branch-name>
 
 
 　3. 削除ボタンを押して、不要なブランチを削除
+
+
+
+==========　ブランチ名を変更 ==========
+
+
+$ git branch -m <branchname1> <branchname2>
+
 

@@ -42,7 +42,7 @@
 
 
 
-========== merge ==========
+========== merge (リモートリポジトリ） ==========
 
 
 # merge実行
@@ -64,3 +64,22 @@
 
 
 　6. 「Confirm merge」をクリックしてmergeを実行
+
+
+
+ ========== merge（ローカルリポジトリ） ==========
+
+
+ # 指定したブランチを今いるブランチにマージ
+
+
+ 　$ git merge <branchname>
+
+
+ # ブランチ同士の差分を確認　（diff)
+
+
+   $ git diff <branchname1> <branchname2>
+
+
+   　(<branchname1> : base, <branchname2> : compare)
