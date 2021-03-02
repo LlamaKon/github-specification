@@ -80,10 +80,32 @@
 ========== コミット履歴を見る ==========
 
 
-$ git log
+# コミット履歴の一覧表示
 
 
-　・上に出力される履歴が新しい履歴
+　$ git log
 
 
-　・commit ID, Author, Date, commit messageが出力
+　　・上に出力される履歴が新しい履歴
+
+
+　　・commit ID, Author, Date, commit messageが出力
+
+  
+ 　 〜　オプション　〜
+
+
+　　　・--oneline　：　各コミットを１行で表示
+
+　　　・--graph　：　各コミットを線で結ぶ
+
+　　　・-- <filename>　：　特定のファイルの情報を表示
+
+　　　・--follow <filename>　：　ファイル名の変更も考慮
+
+
+
+# 特定のコミット情報を表示
+
+
+　$ git show <commitID>
