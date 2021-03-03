@@ -1,0 +1,118 @@
+=========== リモートリポジトリ ===========
+
+
+# ローカルリポに設定しているリモートリポを確認
+
+
+　$ git remote -v
+
+
+　　・push先とfetch先が設定されている
+
+
+　　・cloneの際に、自動でoriginにclone元のリポのURLが登録される
+
+
+
+=========== fetch (情報取得のみ）===========
+
+
+# リモートリポから情報取得
+
+
+　$ git fetch <remote_ref>
+
+
+　　・<remote_ref>はリモートリポのリファレンス名　（originなど）
+
+
+　　・<remote_ref>を省略すると、デフォルトでoriginになる
+
+
+　　・fetchは情報を取ってくる作業のみを行う
+
+
+　　　　pull = fetch + merge
+
+
+　　・情報更新の場所はremotes/<remote_ref>/<branchname>
+
+
+
+========== pull（情報取得＆マージ） ==========
+
+
+# 情報を取得し、マージ
+
+
+　$ git pull <remote_ref> <branchname>
+
+
+　　・指定したリモートリポの指定したブランチを今いるローカルリポのブランチにマージ
+
+
+
+========== リモートリポから情報を取得 ==========
+
+
+　--- Githubのリモートリポに変更があったとする ---
+
+　↓
+
+　$ git fetch <remote_ref>　（リモートリポからローカルリポに情報を取得）
+
+　↓
+
+　mergeはまだ行われていないため注意　（pullして解決）
+
+　↓
+
+　$ git pull origin main　（pullする）
+
+
+
+========== pullした際にConflictが起きる場合 ==========
+
+
+# pullした際にConflictが起きる場合
+
+
+　--- Githubのリモートリポ（README.md）に変更があったとする ---
+
+　↓
+
+　$ git branch -b <branchname>　（ブランチ作成し、作成したブランチに移動）
+
+　↓
+
+　$ subl README.md　（README.mdファイルを編集する）
+
+　↓
+
+　$ git add README.md　（Working directory　→  Staging area)
+
+　↓
+
+　$ git commit -m "<commit message>" (Staging area →  リポジトリ)
+
+　↓
+
+　$ git pull origin main （リモートリポのmainブランチをマージ）　→ Conflict発生
+
+　↓
+
+　--- Conflictに対応する ---
+
+　↓
+
+　$ git add README.md　（MERGING → Staging area)
+
+　↓
+
+　$ git commit -m "<commit message>"　（Staging area　→ リポジトリ）
+
+　　・Conflictに対応したREADME.mdファイルをコミットする
+
+　↓
+
+　$ git branch -d <branchname>　（不要なブランチを削除）
