@@ -70,7 +70,7 @@
 ========== merge（ローカルリポジトリ） ==========
 
 
-・Fast forword　：　mainブランチに新たなコミットが無い状態でのmerge
+・Fast forward　：　mainブランチに新たなコミットが無い状態でのmerge
 
 
 ・Automatic maege　：　mainブランチにも新たなコミットがある状態でのmerge
@@ -123,3 +123,105 @@
   ↓
 
   $ git branch -d <branchname2>　（不要になったブランチを削除）
+
+
+
+# Automatic merge
+
+
+　$ git checkout -b <branchname>　（ブランチを作成し、そのブランチに移動）
+
+　↓
+
+　＝＝＝＝＝ 作成したブランチでの作業 ＝＝＝＝＝
+
+  --- ファイルの編集を行う ---
+
+　　$ git add <filename>
+
+　　$ git commit -m "<commit message>"
+
+　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+  ↓
+
+  $ git checkout main　（mainブランチに移動）
+
+  ↓
+
+  ＝＝＝＝＝＝ mainブランチでの作業 ＝＝＝＝＝＝
+
+  --- ファイルの編集を行う ---
+
+　　$ git add <filename>
+
+　　$ git commit -m "<commit message>"
+
+　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+　↓
+
+　$ git diff <branchname1> <branchname2>　（差分を確認)
+
+　↓
+
+　$ git merge <branchname2>　（<branchname2>をmainブランチにmerge)
+
+　↓
+
+　$ git branch -d <branchname2>　（不要になったブランチを削除）
+
+
+
+# Conflict
+
+
+　$ git checkout -b <branchname>　（ブランチを作成し、そのブランチに移動）
+
+　↓
+
+　＝＝＝＝＝ 作成したブランチでの作業 ＝＝＝＝＝
+
+  --- ファイルの編集を行う ---
+
+　　$ git add <filename>
+
+　　$ git commit -m "<commit message>"
+
+　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+  ↓
+
+  $ git checkout main　（mainブランチに移動）
+
+  ↓
+
+  ＝＝＝＝＝＝ mainブランチでの作業 ＝＝＝＝＝＝
+
+  --- ファイルの編集を行う ---
+
+　　$ git add <filename>
+
+　　$ git commit -m "<commit message>"
+
+　＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+　↓
+
+　$ git diff <branchname1> <branchname2>　（差分を確認)
+
+　↓
+
+　$ git merge <branchname2>　（<branchname2>をmainブランチにmerge)　　→  Conflictが起きる
+
+　↓
+
+　--- Conflictを解消するため編集する ---　　→  Conflictを起こしているファイルはMERGINGエリアで管理されている
+
+　　$ git add <filename>　（MERGING → Staging area)
+
+　　$ git commit -m "<commit message>" （Staging area → リポジトリ）
+
+　↓
+　
+　$ git branch -d <branchname2>　（不要になったブランチを削除）
