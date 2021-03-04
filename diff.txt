@@ -1,0 +1,184 @@
+========== diff ==========
+
+
+# ファイルの編集の差分を確認 (Working directory ⇄ Staging area)
+
+
+　$ git diff
+
+
+　　・$git diffと実行すると、デフォルトでWorking directoryとStaging areaのdiffを表示
+
+
+　　・difftoolと実行すると、設定済みのGUIツールが起動
+
+
+
+# pagerを無効化
+
+　
+　$ git config --global --replace-all core.pager "less -F -X"
+
+
+
+========== Working directoryとStaging areaの差分を確認 ==========
+
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git add <filename>　（Working directory　→  Staging area）
+
+↓
+
+$ subl <filename>　（2回目ファイル編集）　→ 同じファイルを編集
+
+↓
+
+$ git diff (差分確認)
+
+or
+
+$ git difftool　（GUIで差分確認）
+
+
+
+========== Working directoryとリポジトリの差分を確認 ==========
+
+
+--------------------------------------------------------
+# ファイルの編集の差分を確認 (Working directory ⇄ リポジトリ)
+
+
+　$ git diff HEAD
+
+
+　　・HEAD : アクティブブランチの最新のコミットを指すポインタ
+--------------------------------------------------------
+
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git diff HEAD　（差分確認）
+
+↓
+
+ローカルリポのリポジトリに存在するファイルとの差分を確認
+
+
+
+========== Staging areaとリポジトリの差分を確認 ==========
+
+
+-----------------------------------------------------
+# ファイルの編集の差分を確認 (Staging area ⇄ リポジトリ)
+
+
+　$ git diff --staged HEAD
+
+
+　　・--stagedを付けて、Staging areaを比較対象にする
+-----------------------------------------------------
+
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git add <filename>　（Working directory　→  Staging area）
+
+↓
+
+$ git diff --staged HEAD　（差分確認）
+
+
+# コミットをする前に、Staging areaとの差分を確認したい時に使用
+
+
+
+========== 特定のファイルのみ差分を確認 ==========
+
+
+--------------------------------------------------
+# ファイルの編集の差分を確認 (特定のファイルの差分を確認)
+
+
+　$ git diff -- <filename>
+--------------------------------------------------
+
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git add <filename>　（Working directory　→  Staging area)
+
+↓
+
+$ subl <filename>　（2回目ファイル編集）
+
+↓
+
+$ subl <filename2>　（別ファイル編集）
+
+↓
+
+$ git diff -- <filename>　（<filename>のみ差分を確認）
+
+or
+
+$ git difftool -- <filename>
+
+
+
+========== commit同士の差分を確認 ==========
+
+
+--------------------------------------------------
+# commit同士の差分を確認
+
+
+　$ git diff <commitID> <commitID>
+
+
+　　・baseにするcommitを左に配置
+
+
+　　・左：古いコミット, 右：新しいコミット
+
+
+　　・最新のコミットポイントにはHEADを使用
+--------------------------------------------------
+
+
+$ git log --oneline　（コミット履歴を確認し、commitIDを取得）
+
+↓
+
+$ git diff <commitID> <commitID2>
+
+or
+
+$ git diff HEAD^ HEAD
+
+
+
+========== ブランチ同士の差分を確認 ==========
+
+
+---------------------------------------------
+# ブランチ同士の差分を確認
+
+
+　$ git diff <branchname> <branchname>
+---------------------------------------------
+
+
+$ git branch　（比較したブランチを確認）
+
+↓
+
+$ git diff <branchname> <branchname> （差分確認）
