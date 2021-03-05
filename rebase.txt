@@ -1,0 +1,86 @@
+========== rebase ==========
+
+
+# Rebaseのメリット
+
+
+　・不要なマージコミットを作らなくて良い
+
+
+　・コミット履歴が綺麗になる
+
+
+　・後々マージするブランチを適宜rebaseしておくと、マージが行いやすい
+
+
+
+# Rebaseする際の注意点
+
+
+　・既存のコミットを削除し、新しいコミットが作成される
+
+
+　・一度pushしているコミットはrebaseしない
+
+
+
+========== rebaseしてからmergeする ==========
+
+
+$ git checkout -b <branchname>　（ブランチ作成＆移動）
+
+↓
+
+-------------------- <branchname>でのファイル編集> --------------------
+
+$ subl <filename1>　（ファイル１を編集）
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+---------------------------------------------------------------------
+
+↓　
+
+----------------------- <mainでのファイル編集> ------------------------
+
+$ git checkout main　（mainブランチに移動）
+
+↓
+
+$ subl <filename2>　（ファイル２を編集）
+
+↓
+
+$ git add <filename2>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+--------------------------------------------------------------------
+
+↓
+
+$ git checkout <branchname>　（再び<branchname>へ移動）
+
+↓
+
+$ git rebase main　（mainブランチを<branchname>にrebaseする）
+
+↓
+
+$ git checkout main　（再びmainブランチへ移動）
+
+↓
+
+$ git diff main <branchname>　（差分を確認)
+
+↓
+
+$ git merge <branchname>　（<branchname>をmerge）
