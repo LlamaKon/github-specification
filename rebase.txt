@@ -84,3 +84,79 @@ $ git diff main <branchname>　（差分を確認)
 ↓
 
 $ git merge <branchname>　（<branchname>をmerge）
+
+
+
+
+========== rebaseでのコンフリクト対応 ==========
+
+
+$ git checkout -b <branchname>　（ブランチ作成＆移動）
+
+↓
+
+-------------------- <branchname>でのファイル編集> --------------------
+
+$ subl <filename1>　（ファイル１を編集）
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+---------------------------------------------------------------------
+
+↓　
+
+----------------------- <mainでのファイル編集> ------------------------
+
+$ git checkout main　（mainブランチに移動）
+
+↓
+
+$ subl <filename1>　（ファイル１を編集）　→ <branchname>で編集したファイルと同じファイル
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+--------------------------------------------------------------------
+
+↓
+
+$ git checkout <branchname>　（再び<branchname>へ移動）
+
+↓
+
+$ git diff main <branchname>　（差分確認）
+
+↓
+
+$ git rebase main　（mainブランチを<branchname>にrebaseする）
+
+↓
+
+---　コンフリクトが起きる ---
+
+↓
+
+$ git mergetool　（コンフリクト対応)
+
+↓
+
+$ git rebase --continue　(コンフリクトに対応したことを伝える)
+
+↓
+
+$ git checkout main （mainブランチに移動）
+
+↓
+
+$ git merge <branchname>　（<branchname>をmerge）
