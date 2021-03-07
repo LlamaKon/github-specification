@@ -1,0 +1,131 @@
+==========　stash ==========
+
+
+# Working directoryとSatging areaの内容を一時的に別の場所へ移動
+
+
+# stashへ移動させた内容は、stashから取り出す際、Working directoryに戻ってくる
+
+
+　Working directory　→  stash　→　Working directory
+
+
+　Staging area　→  stash  →  Working directory
+
+
+# stashから戻したとしても、stash内には作業内容が残ることに注意
+
+
+
+========== 基本操作 ==========
+
+
+# stashする
+
+
+　$ git stash
+
+
+# stashした内容を一覧表示
+
+
+　$ git stash list
+
+
+# stashした内容をWorking directoryへ戻す
+
+
+　$ git stash apply
+
+
+　　・Staging areaの内容をStaging areaへ戻す際は--indexを使用
+
+
+# 作業内容をstashから削除
+
+
+　$ git stash drop
+
+
+
+========== stashする ==========
+
+
+$ subl <filename1>　（ファイルの編集）
+
+↓
+
+--- 緊急の作業が入ったとする ---
+
+↓
+
+$ git stash　（Working directoryの内容をstash）
+
+↓
+
+$ git stash list　（stashの一覧表示）
+
+↓
+
+$ subl <filename2>　（緊急作業のファイルを編集）
+
+↓
+
+$ git add <filename2>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+↓
+
+$ git stash apply　（stashした内容をWorking directoryへ戻す
+
+↓
+
+$ git stash drop　（stashの内容を削除）
+
+
+
+========== stashでのコンフリクト ==========
+
+
+$ subl <filename1>　（ファイル１を編集）
+
+↓
+
+$ git stash　（Working directoryの内容をstash)
+
+↓
+
+$ subl <filename1>　（stashしたファイルと同じファイルを編集)
+
+↓
+
+$ git stash apply　（先ほどstashした内容をWorking directoryへ戻す）　→ エラー発生
+
+　　・Working directoryにstashしたものと同じファイルがあるためエラーが発生する
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git stash apply　（先ほどstashした内容をWorking directoryへ戻す）　→ コンフリクト発生
+
+↓
+
+$ git mergetool　（コンフリクトに対応）
+
+↓
+
+$ rm <filename1>.orig　（コンフリクトに対応して作成されたファイルを削除）
+
+↓
+
+$ git commit -m "<commit message>" （コンフリクトに対応した結果をコミット）
+
+↓
+
+$ git stash drop　（stashの内容を削除）
