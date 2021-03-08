@@ -1,0 +1,61 @@
+========== tag ==========
+
+
+# 最新のコミットにラベル付け
+
+
+　$ git tag <tagname>
+
+
+# tag一覧を表示
+
+
+　$ git tag --list
+
+
+# 指定したtagを削除
+
+
+　$ git tag --delete <tagname>
+
+
+
+# 最新のコミットにタグを付ける
+
+
+　$ git tag <tagname>　（最新のコミットにタグ付け）
+
+　↓
+
+　$ git tag --list　（tagの一覧を表示）
+
+　↓
+
+　$ git show <tagname>　（tag名を指定し、そのtag名をリファレンスにしてコミット情報を確認）
+
+
+
+==========　アノテーション付きtag　==========
+
+
+# annotated tagの作成
+
+
+　$ git tag -a <tagname>
+
+
+　　・annotated tagはtagに追加情報を加えたもの
+
+
+　　・デフォルトで設定されているエディタが開かれ、そこで書く
+
+
+　　・-m <message>を付けて実行すれば、エディタは開かれず、直接メッセージを書いて実行可能
+
+
+### $ git tag -a <tagname>を実行した際、コメントを書けない場合 ###
+
+
+　・sublime textの場合
+
+　　❯ git config --global core.editor "subl -n -w"
