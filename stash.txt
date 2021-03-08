@@ -26,6 +26,9 @@
 　$ git stash
 
 
+　　・trackされているファイルのみstashされる
+
+
 # stashした内容を一覧表示
 
 
@@ -40,11 +43,22 @@
 
 　　・Staging areaの内容をStaging areaへ戻す際は--indexを使用
 
+# 特定のstashだけapply
+
+
+　$ git stash apply stash@{<n>}
+
 
 # 作業内容をstashから削除
 
 
 　$ git stash drop
+
+
+# 特定のstashだけdrop
+
+
+　$ git stash drop stash@{<n>}
 
 
 
@@ -129,3 +143,117 @@ $ git commit -m "<commit message>" （コンフリクトに対応した結果を
 ↓
 
 $ git stash drop　（stashの内容を削除）
+
+
+
+========== untrackファイルの作業内容をstash　==========
+
+
+# untrackファイルの作業内容もstash
+
+
+　$ git stash -u
+
+
+　　・$ git stashのみの場合、track済みのファイルのみstash
+
+
+　　・-uを付けることで、trackファイルとuntrackファイルの両方をstash
+
+
+# 特定のstashの内容を確認
+
+
+　$ git stash show stash@{<n>}
+
+
+　　・stash@{0}, stash@{1}のようにして、特定のstashへのリファレンスを得る
+
+
+　　・untrackファイルの作業内容は表示されない
+
+
+# 同時にapply & drop
+
+
+　$ git stash pop
+
+
+　　・一番上にあるstashをpop
+
+
+
+==========　gitignoreされているファイルの作業内容をstash ==========
+
+
+# gitignoreしているファイルの作業内容も含めてstash
+
+
+　$ git stash -a
+
+
+　　・$ git stash, git stash -uではgitignoreされているファイルの作業内容はstashの対象外
+
+
+# gitignoreしているファイルの作業内容をstashする
+
+
+　$ subl .gitignore　（gitignoreファイルに<filename1>を追加）
+
+　↓
+
+　$ git add .gitignore （Working directory　→  Staging area)
+
+　↓
+
+　$ git commit -m "<commit message>"　（Staging area　→　リポジトリ）
+
+　↓
+
+　$ touch <filename1>　（先ほど.gitignoreに追加したファイルを新規作成）
+
+　↓
+
+　$ git stash　（<filename1>の新規作成の作業内容はstashされない）
+
+　↓
+
+　$ git stash -a　（<filename1>の新規作成の作業内容がstashされる）
+
+　↓
+
+　$ git stash pop　（最新のstash内容をpop)
+
+
+
+========== メッセージを添えてstash　==========
+
+
+# メッセージを添えてstash
+
+
+　$ git stash save "<message>"
+
+
+　　・stashに複数の作業内容ができる場合は、メッセージを付けると良い
+
+
+# メッセージを添えながら複数の作業内容をstash
+
+
+　$ subl <filename1>　（１度目の変更）
+
+　↓
+
+　$ git stash save "<message>"　（１度目のstash)
+
+　↓
+
+　$ subl <filename1>　（２度目の変更）　→  １度目の変更の作業前の状態になっている
+
+　↓
+
+　$ git stash save "<message>"　（２度目のstash)
+
+　↓
+
