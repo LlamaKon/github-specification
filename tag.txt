@@ -158,3 +158,21 @@ $ git difftool <tagname1> <tagname2>
 
 　$ git push <remote_ref> :<tagname>
 
+
+
+========== 特定のtagで作業 ==========
+
+
+# コードを特定のバージョンの状態にする
+
+
+　$ git checkout tags/<tagname>
+
+
+# 全てのtag情報をローカルに取得
+
+
+　$ git fetch --tags --all
+
+
+　　・もし、$ git checkout tags/<tagname>でcheckoutできない場合、tag情報をfetchする
