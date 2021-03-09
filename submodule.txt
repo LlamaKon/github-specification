@@ -1,0 +1,124 @@
+========== submodule ==========
+
+
+# プロジェクトにsubmoduleを追加
+
+
+　$ git submodule add <submodule_url>
+
+
+
+========== submoduleを作成 ==========
+
+
+--- リモートのGithub上でリポジトリを作成 ---　→ 　main project用のリポジトリ
+
+↓
+
+--- リモートのGithub上でリポジトリを作成 ---　→　 submodule用のリポジトリ
+
+↓
+
+$ git clone <remote_repo_url>　（ローカル上にmain projectのリポジトリをclone)
+
+↓
+
+$ cd <main project>　（ローカルにcloneしたリポジトリ名のフォルダに移動）
+
+↓
+
+$ git submodule add <submodule_url>　（submoduleをmain projectに追加）
+
+↓
+
+--- .gitmodulesなどが新規作成された作業内容が発生 ---
+
+↓
+
+$ git add .
+
+↓
+
+$ git commit -m "<commit message>"
+
+↓
+
+$ git push origin main　（リモートリポのmain projectとsubmoduleが紐づけられる）
+
+
+
+========== submoduleを含むプロジェクトをclone ==========
+
+
+!!!　通常、submodule以下のファイル/フォルダはcloneされない
+
+
+# submoduleの初期化
+
+
+　$ git submodule init
+
+
+# submoduleの更新
+
+
+　$ git submodule update
+
+
+# clone時にsubmoduleを初期化＆更新
+
+
+　$ git clone --recurse-submodules <url>
+
+
+
+#　submoduleのあるプロジェクトをclone
+
+
+　$ git clone <remote_repo_url>　（ローカル上にmain projectのリポジトリをclone)
+
+　↓
+
+　$ cd <main_project>/<submodule>
+
+　↓
+--------------- submodule内での処理 ---------------
+
+　$ git submodule init　（初期化）
+
+　↓
+
+　$ git submodule update　（更新）
+
+--------------------------------------------------
+
+
+
+========== リモートリポのsubmoduleの更新をローカルリポに反映 ===============
+
+
+--- リモートリポのsubmoduleに更新がある場合 ---
+
+↓
+
+$ cd ~/<main-project>　（ローカルのmain projectに移動）
+
+↓
+
+$ git submodule foreach "git pull origin main"　（全てのsubmoduleでgit pull origin mainを実行)
+
+↓
+
+$ git add .
+
+↓
+
+$ git commit -m "<commit message>"
+
+↓
+
+$ git pull origin main
+
+↓
+
+$ git push origin main　（リモートリポにpush）
