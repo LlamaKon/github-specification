@@ -59,3 +59,102 @@
 　・sublime textの場合
 
 　　❯ git config --global core.editor "subl -n -w"
+
+
+
+========== 特定のコミットにタグ付け ==========
+
+
+# 特定のコミットにタグ付け
+
+
+　$ git tag -a <tagname> <commitID>
+
+
+　　・<tagname> <commitID>の順番に注意
+
+
+　　・<commitID>は　$ git log --onelineで出力されるもの
+
+
+
+========== tag同士の差分確認 ==========
+
+
+# tag同士のdiffを表示
+
+
+　$ git diff <tagname1> <tagname2>
+
+
+　　・$ git difftool <tagname1> <tagname2>でGUIで操作可能
+
+
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+↓
+
+$ git tag -a <tagname1>　（１つ目のタグ付け）
+
+↓
+
+--- エディタが開くので、コメントを記入 ---
+
+↓
+
+$ subl <filename>　（ファイル編集）
+
+↓
+
+$ git add <filename1>　（Working directory　→  Staging area)
+
+↓
+
+$ git commit -m "<commit message>"　（Staging area　→  リポジトリ）
+
+↓
+
+$ git tag -a <tagname2>　（2つ目のタグ付け）
+
+↓
+
+$ git diff <tagname1> <tagname2>
+
+or
+
+$ git difftool <tagname1> <tagname2>
+
+
+
+========== リモートリポにtag情報を送信 ==========
+
+
+# 指定のtagをリモートリポに送信
+
+
+　$ git push <remote_ref> <tagname>
+
+
+　　・$ git push origin mainでpushした場合、tag情報はpushされない
+
+
+# 全てのtag情報をpush
+
+
+　$ git push <remote_ref> --tags
+
+
+# 特定のtag情報をリモートリポ上から削除
+
+
+　$ git push <remote_ref> :<tagname>
+
