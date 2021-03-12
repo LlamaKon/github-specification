@@ -1,5 +1,7 @@
 # GitHub 備忘録
 
+![Git Logo](https://www.wallpapertip.com/wmimgs/41-412889_git-and-github-logo.png)
+
 
 [GitHubの設定について](https://github.com/hibikon/github-specification/blob/main/settings.txt)
 
