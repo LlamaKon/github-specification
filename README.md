@@ -1,18 +1,33 @@
-# GitHub 備忘録
-
 ![Git Logo](https://www.wallpapertip.com/wmimgs/41-412889_git-and-github-logo.png)
 
+## GitHubを始める前に... 
+ 
 
 [GitHubの設定について](https://github.com/hibikon/github-specification/blob/main/settings.txt)
+ 
+ 
 
+## リポジトリを作成 
+ 
 
 [リポジトリの作成について](https://github.com/hibikon/github-specification/blob/main/create-repo.txt)
+ 
 
+
+## 作業用ブランチ 
+ 
 
 [作業用ブランチについて](https://github.com/hibikon/github-specification/blob/main/branch.txt)
+ 
 
+
+## Working directoryについて... 
+ 
 
 [Working directoryについて](https://github.com/hibikon/github-specification/blob/main/working-directory.txt)
+ 
+
+
 
 
 [add & commit](https://github.com/hibikon/github-specification/blob/main/add-commit.txt)
