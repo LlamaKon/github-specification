@@ -1,24 +1,24 @@
 ![Git Logo](https://www.wallpapertip.com/wmimgs/41-412889_git-and-github-logo.png)
 
-## GitHubを始める前に...  
-- <br>
-	- GitHubを始める前に設定すべきことを記載  
+## GitHubを始める前に...
 <br>
+	- GitHubの設定方法について記載 
+
 [GitHub Settings](https://github.com/hibikon/github-specification/blob/main/settings.txt)
 <br><br>
 ## リポジトリを作成について...
-- <br>
-	- リポジトリの作成方法の種類  
-		- スクラッチから作成  
-		- 既存のディレクトリをGitリポにする  
-		- 既存のリモートリポから作成  
+	- リポジトリの作成方法
+		- スクラッチから作成
+		- 既存のディレクトリをGitリポにする
+		- 既存のリモートリポから作成
 <br>
+
 [Repositories](https://github.com/hibikon/github-specification/blob/main/create-repo.txt)
 <br><br>
 ## 作業用ブランチについて...
 [Branch](https://github.com/hibikon/github-specification/blob/main/branch.txt)
 <br><br>
-## Working directoryについて...  
+## Working directoryについて...
 [Working directory](https://github.com/hibikon/github-specification/blob/main/working-directory.txt)
 <br><br>
 ## add & commitについて...
