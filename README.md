@@ -37,7 +37,7 @@
 	-基本的なファイル変更の流れ  
 	- add  
 	- commit  
-	- コミット履歴を見る  
+	- コミット履歴を見る
 	<br>  
 [add & commit](https://github.com/hibikon/github-specification/blob/main/add-commit.txt)
 <br><br>
