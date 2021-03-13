@@ -23,7 +23,7 @@
 	- ブランチの切り替え  
 	- ブランチの削除  
 	- ブランチ名を変更
-	<br> 
+	<br>
 [Branch](https://github.com/hibikon/github-specification/blob/main/branch.txt)
 <br><br>
 ## Working directoryについて...  
