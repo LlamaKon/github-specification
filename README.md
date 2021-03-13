@@ -5,7 +5,7 @@
 
 	- GitHubの基本設定  
 	- 紐づいているリモートリポのURLを確認
-	<br>
+
 
 [GitHub Settings](https://github.com/hibikon/github-specification/blob/main/settings.txt)
 <br><br>
@@ -15,7 +15,7 @@
 	- スクラッチから作成  
 	- 既存のディレクトリをGitリポにする
 	- 既存のリモートリポから作成
-	<br>  
+	
 
 [Repositories](https://github.com/hibikon/github-specification/blob/main/create-repo.txt)
 <br><br>
@@ -28,7 +28,7 @@
 	- ブランチの切り替え  
 	- ブランチの削除  
 	- ブランチ名を変更
-	<br>  
+	 
 
 [Branch](https://github.com/hibikon/github-specification/blob/main/branch.txt)
 <br><br>
@@ -36,7 +36,7 @@
 ◯作成・編集したファイルが初めに管理される場所  
 
 	- Working directoryの内容を破棄
-	<br>  
+	
 
 [Working directory](https://github.com/hibikon/github-specification/blob/main/working-directory.txt)
 <br><br>
@@ -47,7 +47,7 @@
 	- add  
 	- commit  
 	- コミット履歴を見る
-	<br>  
+	
 
 [add & commit](https://github.com/hibikon/github-specification/blob/main/add-commit.txt)
 <br><br>
@@ -60,7 +60,7 @@
 	- tag同士の差分確認  
 	- リモートリポにtag情報を送信  
 	- 特定のtagで作業
-	<br>  
+	
 
 [Commit Tag](https://github.com/hibikon/github-specification/blob/main/tag.txt)
 <br><br>
@@ -69,7 +69,7 @@
 
 	- pull  
 	- push  
-	<br>
+	
 
 [Pull & Push](https://github.com/hibikon/github-specification/blob/main/pull-push.txt)
 <br><br>
@@ -80,7 +80,7 @@
 	- Fast Forward Merge  
 	- Automatic Merge  
 	- Conflictへの対応  
-	<br>
+	
 
 [Merge](https://github.com/hibikon/github-specification/blob/main/merge.txt)
 <br><br>
@@ -89,7 +89,7 @@
 
 	- 基本情報  
 	- untrack fileの一覧表示  
-	<br>
+	
 
 [untrack file](https://github.com/hibikon/github-specification/blob/main/untrack-file.txt)
 <br><br>
@@ -97,7 +97,7 @@
 ◯Staging areaの内容をWorking directoryへ戻す方法  
 
 	- unstage  
-	<br>
+	
 
 [unstage](https://github.com/hibikon/github-specification/blob/main/unstage.txt)
 <br><br>
@@ -107,7 +107,7 @@
 	- ファイル名変更
 	- ファイル削除
 	- ファイル削除を取り消す
-	<br>
+	
 
 [File management](https://github.com/hibikon/github-specification/blob/main/file.txt)
 <br><br>
@@ -116,7 +116,7 @@
 
 	- 基本情報
 	- .gitignoreの書き方
-	<br>
+	
 
 [gitignore](https://github.com/hibikon/github-specification/blob/main/gitignore.txt)
 <br><br>
@@ -127,7 +127,7 @@
 	- リモートリポから情報取得(fetch)
 	- リモートリポから情報取得(pull)
 	- Conflictに対応
-	<br>
+	
 
 [Remote Repositories](https://github.com/hibikon/github-specification/blob/main/remote-repo.txt)
 <br><br>
@@ -140,7 +140,7 @@
 	- 差分確認(特定のファイルのみ)
 	- 差分確認(Commit同士)
 	- 差分確認(branch同士)
-	<br>
+	
 
 [diff](https://github.com/hibikon/github-specification/blob/main/diff.txt)
 <br><br>
@@ -150,7 +150,7 @@
 	- 基本情報
 	- rebaseしてからmerge
 	- Conflictに対応
-	<br>
+	
 
 [rebase](https://github.com/hibikon/github-specification/blob/main/rebase.txt)
 <br><br>
@@ -164,7 +164,7 @@
 	- 特定のstashのみ戻す
 	- 作業内容をstashから削除
 	- Conflictに対応
-	<br>
+	
 
 [stash](https://github.com/hibikon/github-specification/blob/main/stash.txt)
 <br><br>
@@ -175,7 +175,7 @@
 	- submoduleを作成
 	- submoduleを含むプロジェクトをclone
 	- リモートリポのsubmoduleの更新をローカルリポに反映
-	<br>
+	
 	
 [submodule](https://github.com/hibikon/github-specification/blob/main/submodule.txt)
 <br><br>
