@@ -54,3 +54,28 @@
 
 
   　　directory/
+
+
+
+  ========== .gitignoreに反映しない場合の対処 ==========
+
+
+# .gitignoreに記載したファイルなどがpushした際に反映されない原因
+
+
+　☆ 一度GitHubにpushしているためキャッシュが残っている
+
+　
+　　$ git rm -r --cached <filename>　　　
+
+　　↓
+
+　　$ git add .gitignore
+
+　　↓
+
+　　$ git commit -m "commit message"
+
+　　↓
+
+　　$ git push origin main
